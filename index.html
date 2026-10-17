@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reducible configurations · Step-by-step</title>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="style-v2.css?v=20261017">
+  <script defer src="vendor/katex/katex.min.js"></script>
+  <script defer src="cases.js?v=20261017"></script>
+  <script defer src="layouts.js?v=20261017"></script>
+  <script defer src="model.js?v=20261017"></script>
+  <script defer src="geometry.js?v=20261017"></script>
+  <script defer src="structure.js?v=20261017"></script>
+  <script defer src="app.js?v=20261017"></script>
+</head>
+<body>
+  <main>
+    <div class="proof-desk">
+    <section class="selection-row" aria-label="Claim and case controls"><label for="claim-select">Claim</label><select id="claim-select" aria-label="Select Claim"></select><span class="case-label">Case</span><div id="case-options" role="group" aria-label="Select case"></div><span class="keyboard-hint">← / → move</span></section>
+    <div class="working-row">
+    <section class="workspace" aria-label="Reduction diagram">
+      <div class="board-head"><div><span class="overline" id="configuration-stage">CURRENT CONFIGURATION</span><div id="case-heading"></div></div><div id="state-count"></div></div>
+      <div class="diagram-scroll"><div id="graph" class="graph"><svg id="edges" aria-hidden="true"></svg><div id="nodes"></div><div id="empty-note"></div></div></div>
+      <section class="controls" aria-label="Move controls"><div class="move-row"><div class="current-move"><span class="overline">CURRENT MOVE</span><div id="current-operation"></div></div><div class="navigation"><button id="reset" aria-label="Reset">Reset</button><button id="previous" aria-label="Previous move">← Previous</button><button id="next" class="primary" aria-label="Next move">Next →</button></div></div><div class="progress-track"><div id="progress"></div></div></section>
+      <div class="legend" id="diagram-legend"><span class="move-key"><i class="dot"></i>Remaining vertex</span><span class="move-key"><i class="dot current"></i>Current move</span><span class="move-key"><i class="dot changed"></i>Updated value</span><span class="move-key"><i class="dot deferred"></i>Removed / deferred</span><span class="setup-key"><i class="dot partition-u"></i><span data-tex="U_H"></span></span><span class="setup-key"><i class="dot partition-f"></i>Vertices of <span data-tex="F_H"></span></span><span class="setup-key"><i class="f-edge-key"></i>Edges of <span data-tex="F_H"></span></span><span><i class="degree-key" aria-hidden="true"></i>Degree in <span data-tex="G"></span></span><span id="geometry-note"></span></div>
+    </section>
+    <section class="details" aria-live="polite">
+      <div class="overline" id="explanation-title">INITIAL STATE</div><h2 id="legality-heading">Why this move is legal</h2>
+      <div id="initial-structure" class="initial-structure" hidden></div>
+      <div class="legality"><div id="check-equations"></div><div id="constraints" class="constraints"></div></div>
+    </section>
+    </div>
+    <section class="sequence" aria-label="Reduction sequence"><span class="overline">SEQUENCE</span><div id="timeline"></div></section>
+    </div>
+    <details class="reading-notes"><summary>Notes</summary><h3 id="claim-title">Claim 2</h3><div id="statement" class="statement"></div><p><span data-tex="f"></span> shows the current list size. An equality is used only when that size is known exactly. Otherwise, <span data-tex="\geq"></span> gives a guaranteed lower bound for <span data-tex="|L(v)|"></span>. <span data-tex="g"></span> gives the exact remaining demand. Saving colors uses upper bounds on the protected lists, not their lower bounds.</p><p>The orange boxes show <span data-tex="d_G(v)"></span>, the degree in the original graph <span data-tex="G"></span>. These degrees stay fixed through the moves and need not equal the number of edges shown.</p><p>A deletion removes a vertex from the current graph and defers its coloring to the reverse extension. It does not immediately color that vertex or change its neighbors’ lists or demands. Faint vertices retain their last values only as a visual reference.</p><p>The diagrams show the particular induced subgraphs and move sequences used in the manuscript. They supplement the proofs. They do not replace the arguments excluding extra edges or identifying vertices.</p><p>Keyboard shortcuts <kbd>←</kbd> <kbd>→</kbd> move through the sequence. <kbd>Home</kbd> returns to the initial state and <kbd>End</kbd> shows the last state.</p></details>
+    <footer><span>Manuscript companion · 17 October 2026</span><span>31 Claims / 56 branches · TeX typesetting</span></footer>
+  </main>
+</body>
+</html>
