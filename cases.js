@@ -2590,11 +2590,11 @@
     {
       "claim": 23,
       "statementTex": "$G$ contains no $(5_{\\ge2},3_1,4,5_{\\ge1})$-cycle.",
-      "statementSourceTex": "$G$ contains no $(5_{\\ge2},3_1,4,5_{\\ge1})$-cycle. Let $v_5\\ne v_2$ be a $3$-neighbor of $v_1$, let $v_6$ be a $3$-neighbor of $v_4$, and let $v_7$ be the $3$-neighbor of $v_2$. If $v_4v_7\\in E(G)$, let $v_6=v_7$.",
+      "statementSourceTex": "$G$ contains no $(5_{\\ge2},3_1,4,5_{\\ge1})$-cycle. Let $v_5\\ne v_2$ be another $3$-neighbor of $v_1$ and $v_6$ be a $3$-neighbor of $v_2$. By Claim 2, $v_6$ has no $3$-neighbor other than $v_2$. Let $v_7$ be a $3$-neighbor of $v_4$. If $v_4v_6\\in E(G)$, we choose $v_7$ to be $v_6$. Otherwise, $v_7\\ne v_6$.",
       "cases": [
         {
           "branch": "case-1",
-          "caseTex": "Case 1. $v_6=v_7$",
+          "caseTex": "Case 1. $v_4v_6\\in E(G)$ (hence $v_6=v_7$)",
           "labels": {
             "1": "v_1",
             "2": "v_2",
@@ -2603,45 +2603,46 @@
             "5": "v_5",
             "6": "v_6"
           },
-          "notesTex": "$v_7$ denotes the $3$-neighbor of $v_2$, and in this case it is the same vertex as $v_6$. The extra edge is $v_2v_6$."
+          "notesTex": "Here $v_6=v_7$. The vertex $v_6$ is adjacent to both $v_2$ and $v_4$."
         },
         {
           "branch": "case-2",
-          "caseTex": "Case 2. $v_6\\ne v_7$ and $v_5v_6\\in E(G)$",
+          "caseTex": "Case 2. $v_4v_6\\notin E(G)$ and $v_5v_7\\in E(G)$",
           "labels": {
             "1": "v_1",
             "2": "v_2",
             "3": "v_3",
             "4": "v_4",
             "5": "v_5",
-            "6": "v_6",
-            "7": "v_7"
+            "6": "v_7",
+            "7": "v_6"
           },
-          "notesTex": "Here $H=G[v_1,\\ldots,v_7]$ and $U_H=\\{v_2,v_5,v_6\\}$. The components of $F_H$ are $v_1v_4v_3$ and the isolated vertex $v_7$. The move $\\langle v_2\\mid\\{v_3,v_7\\},m\\rangle$ protects both current lists, as in Remark 1."
+          "notesTex": "Here $H=G[v_1,\\ldots,v_7]$ and $U_H=\\{v_2,v_5,v_7\\}$. The components of $F_H$ are $v_1v_4v_3$ and the isolated vertex $v_6$. The move $\\langle v_2\\mid\\{v_3,v_6\\},m\\rangle$ protects both current lists, as in Remark 1."
         },
         {
           "branch": "case-3",
-          "caseTex": "Case 3. $v_6\\ne v_7$ and $v_5v_6\\notin E(G)$",
+          "caseTex": "Case 3. $v_4v_6\\notin E(G)$ and $v_5v_7\\notin E(G)$",
           "labels": {
             "1": "v_1",
             "2": "v_2",
             "3": "v_3",
             "4": "v_4",
             "5": "v_5",
-            "6": "v_6",
-            "7": "v_7"
+            "6": "v_7",
+            "7": "v_6"
           },
-          "notesTex": "Here $H=G[v_1,\\ldots,v_7]$ and $U_H=\\{v_2\\}$. The edges of $F_H$ are $v_1v_4,v_1v_5,v_3v_4,v_4v_6$, and $v_7$ is isolated in $F_H$. Thus $\\Delta(F_H)=3$. The move $\\langle v_2\\mid\\{v_3,v_7\\},m\\rangle$ protects both current lists, as in Remark 1."
+          "notesTex": "Here $H=G[v_1,\\ldots,v_7]$ and $U_H=\\{v_2\\}$. The edges of $F_H$ are $v_1v_4,v_1v_5,v_3v_4,v_4v_7$, and $v_6$ is isolated in $F_H$. Thus $\\Delta(F_H)=3$. The move $\\langle v_2\\mid\\{v_3,v_6\\},m\\rangle$ protects both current lists, as in Remark 1."
         }
       ]
     },
     {
       "claim": 24,
       "statementTex": "$G$ contains no $(5_{\\ge2},3,4_2,5_{\\ge1})$-cycle.",
+      "statementSourceTex": "$G$ contains no $(5_{\\ge2},3,4_2,5_{\\ge1})$-cycle. Let $v_5$ be the other $3$-neighbor of $v_3$. Let $v_6$ be a $3$-neighbor of $v_4$ and $v_7\\ne v_2$ be a $3$-neighbor of $v_1$. If $v_1v_5\\in E(G)$, we choose $v_7$ to be $v_5$. Otherwise, $v_7\\ne v_5$.",
       "cases": [
         {
           "branch": "case-1",
-          "caseTex": "Case 1. $v_1v_7\\in E(G)$, so $v_5=v_7$",
+          "caseTex": "Case 1. $v_1v_5\\in E(G)$, so $v_7=v_5$",
           "labels": {
             "1": "v_1",
             "2": "v_2",
@@ -2650,34 +2651,34 @@
             "5": "v_5",
             "6": "v_6"
           },
-          "notesTex": "The additional edge is $v_3v_5$. The vertex denoted by $v_7$ in the setup is displayed as $v_5$."
+          "notesTex": "Here $v_7=v_5$. The vertex $v_5$ is adjacent to both $v_1$ and $v_3$."
         },
         {
           "branch": "case-2-via-23",
-          "caseTex": "Case 2. $v_1v_7\\notin E(G)$ and $v_5v_6\\in E(G)$",
+          "caseTex": "Case 2. $v_1v_5\\notin E(G)$ and $v_6v_7\\in E(G)$",
           "labels": {
             "1": "v_1",
             "2": "v_2",
             "3": "v_3",
             "4": "v_4",
-            "5": "v_5",
+            "5": "v_7",
             "6": "v_6"
           },
-          "notesTex": "Here $H=G[v_1,\\ldots,v_6]$ and $v_7\\notin V(H)$. The eight-move reduction uses two starred operations. Each operation retains its own $S_j,T_j,R_j$, with $|S_j|+|T_j|+|R_j|=m$."
+          "notesTex": "Here $H=G[v_1,\\ldots,v_4,v_6,v_7]$ and $v_5\\notin V(H)$. The eight-move reduction uses two starred operations. Each operation retains its own $S_j,T_j,R_j$, with $|S_j|+|T_j|+|R_j|=m$."
         },
         {
           "branch": "case-3",
-          "caseTex": "Case 3. $v_1v_7\\notin E(G)$ and $v_5v_6\\notin E(G)$",
+          "caseTex": "Case 3. $v_1v_5\\notin E(G)$ and $v_6v_7\\notin E(G)$",
           "labels": {
             "1": "v_1",
             "2": "v_2",
             "3": "v_3",
             "4": "v_4",
-            "5": "v_5",
+            "5": "v_7",
             "6": "v_6",
-            "7": "v_7"
+            "7": "v_5"
           },
-          "notesTex": "Apart from the cycle, the edges are $v_1v_5,v_4v_6,v_3v_7$."
+          "notesTex": "Apart from the cycle, the edges are $v_1v_7,v_3v_5,v_4v_6$."
         }
       ]
     },
