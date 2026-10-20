@@ -60,11 +60,8 @@
     if(op.kind==='set9a') return '\\langle v_2,S\\cup R\\rangle';
     if(op.kind==='set9b') return '\\langle v_4,T\\cup R\\rangle';
     if(op.kind==='p'){
-      if(number===31&&branch==='edge'){
-        if(op.v===1&&op.protect.length===2) return '\\langle v_1,B\\rangle';
-      }
       if(op.protect.length===1) return '\\langle '+vertex(op.v)+'\\mid '+vertex(op.protect[0])+','+expression(op.amount)+'\\rangle';
-      if(number===23&&['case-2','case-3'].includes(branch)) return '\\langle '+vertex(op.v)+'\\mid\\{'+op.protect.map(vertex).join(',')+'\\},'+expression(op.amount)+'\\rangle';
+      if((number===23&&['case-2','case-3'].includes(branch))||(number===31&&branch==='edge')) return '\\langle '+vertex(op.v)+'\\mid\\{'+op.protect.map(vertex).join(',')+'\\},'+expression(op.amount)+'\\rangle';
       return '\\langle '+vertex(op.v)+',A\\rangle';
     }
     return '';
@@ -102,7 +99,7 @@
       25:{distinct:'v_6\\ne v_3\\text{ and }v_7\\ne v_3',coincident:'v_6=v_3\\text{ or }v_7=v_3'},
       28:{distinct:'v_6\\ne v_3'},
       30:{noedge:'v_3v_6\\notin E(H)',edge:'v_3v_6\\in E(H)'},
-      31:{noedge:'v_3v_6\\notin E(G)',edge:'v_3v_6\\in E(G)'}
+      31:{noedge:'v_2v_5\\notin E(G)',edge:'v_2v_5\\in E(G)'}
     };
     $('case-options').hidden=meta.cases.length===1;
     $('case-options').style.display=meta.cases.length===1?'none':'';

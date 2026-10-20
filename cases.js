@@ -2829,36 +2829,37 @@
     {
       "claim": 31,
       "statementTex": "A $5_1$-vertex is incident with at most one $(5,4,3,4)$-face.",
+      "statementSourceTex": "A $5_1$-vertex is incident with at most one $(5,4,3,4)$-face. Let $u$ be a $5_1$-vertex incident with two such faces. By Claim 12, they are nonadjacent. Let the faces be $uv_1v_2v_3u$ and $uv_4v_5v_6u$, and let $v_7$ be the unique $3$-neighbor of $u$.",
       "cases": [
         {
           "branch": "noedge",
-          "caseTex": "$v_3v_6\\notin E(G)$",
+          "caseTex": "$v_2v_5\\notin E(G)$",
           "labels": {
-            "1": "v_1",
-            "2": "v_2",
-            "3": "v_3",
-            "4": "v_4",
-            "5": "v_5",
-            "6": "v_6",
-            "7": "v_7",
-            "8": "v_8"
+            "1": "u",
+            "2": "v_1",
+            "3": "v_2",
+            "4": "v_3",
+            "5": "v_4",
+            "6": "v_5",
+            "7": "v_6",
+            "8": "v_7"
           },
-          "notesTex": "$v_1=u$ and $v_8$ is its unique $3$-neighbor. The two pair operations have separate symbolic set-size triples."
+          "notesTex": "$u$ is the central $5_1$-vertex and $v_7$ is its unique $3$-neighbor. The two starred operations have separate symbolic set-size triples."
         },
         {
           "branch": "edge",
-          "caseTex": "$v_3v_6\\in E(G)$",
+          "caseTex": "$v_2v_5\\in E(G)$",
           "labels": {
-            "1": "v_1",
-            "2": "v_2",
-            "3": "v_3",
-            "4": "v_4",
-            "5": "v_5",
-            "6": "v_6",
-            "7": "v_7",
-            "8": "v_8"
+            "1": "u",
+            "2": "v_1",
+            "3": "v_2",
+            "4": "v_3",
+            "5": "v_4",
+            "6": "v_5",
+            "7": "v_6",
+            "8": "v_7"
           },
-          "notesTex": "The starred operation on $v_3,v_5$ allows $v_6$ and then $v_3$ to be removed. The final $2m$-set $B$ protects $v_2,v_4$."
+          "notesTex": "The starred operation on $v_2,v_4$ allows $v_5$ and then $v_2$ to be removed. After trimming $v_1,v_3$ to $5m+2t$, the move $\\langle u\\mid\\{v_1,v_3\\},2m\\rangle$ protects both lists."
         }
       ]
     }
@@ -10438,20 +10439,19 @@
       {
         "claim": 31,
         "branch": "edge",
-        "B": {
-          "whenTex": "After deleting $v_6,v_3$ and trimming both $v_2,v_4$ to $5m+2t$.",
-          "chooseTex": "$B\\subseteq L'(v_1)\\setminus(L'(v_2)\\cup L'(v_4))$, $|B|=2m$.",
-          "availabilityTex": "$|L'(v_1)\\setminus(L'(v_2)\\cup L'(v_4))|\\ge(13m+4t)-2(5m+2t)=3m\\ge2m$.",
-          "demandTex": "$g(v_1)=3m+t\\ge2m$ before assigning $B$.",
-          "actionTex": "\\langle v_1,B\\rangle",
+        "jointSaving": {
+          "whenTex": "After deleting $v_5,v_2$ and trimming both $v_1,v_3$ to $5m+2t$.",
+          "availabilityTex": "$|L(u)\\setminus(L(v_1)\\cup L(v_3))|\\ge(13m+4t)-2(5m+2t)=3m\\ge2m$.",
+          "demandTex": "$g(u)=3m+t\\ge2m$.",
+          "actionTex": "\\langle u\\mid\\{v_1,v_3\\},2m\\rangle",
           "protectedVertices": [
             2,
             4
           ],
           "amountTex": "2m"
         },
-        "deletion6Tex": "Writing $a=s_1+r_1$ and $b=q_1+r_1$ for the verification only, $f(v_6)=15m+4t-r_1=(4m+t)+(4m+t-a)+(4m+t-b)+(4m+t)$.",
-        "pairTex": "\\langle\\{v_3,v_5\\}\\mid v_6,m\\rangle^{*}"
+        "deletion5Tex": "Writing $a=s_1+r_1$ and $b=q_1+r_1$ for the verification only, $f(v_5)=15m+4t-r_1=(4m+t)+(4m+t-a)+(4m+t-b)+(4m+t)$.",
+        "pairTex": "\\langle\\{v_2,v_4\\}\\mid v_5,m\\rangle^{*}"
       }
     ]
   }
